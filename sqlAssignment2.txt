@@ -1,0 +1,13 @@
+
+assignment 2:
+
+1)select count(f.film_id) as documentary_deleted_scenes from film f,film_list fl where f.film_id = fl.fid and f.special_features = 'deleted scenes' group by fl.category having fl.category= 'documentary';
+
+2)select count(f.fid) from film_list f,inventory i,store s,staff sl where f.fid = i.film_id and i.store_id = s.store_id and  s.manager_staff_id =sl.staff_id and sl.first_name = "jon" group by f.category having f.category = "sci-fi";
+
+3)mysql> select total_sales from sales_by_film_category where category = 'animation';
+
+4)select film_list.category from film_list join inventory on film_list.FID = inventory.film_id  join rental on inventory.inventory_id = rental.inventory_id join customer on rental.customer_id     		customer.customer_id where first_name = "Patricia" and last_name = "Johnson" group by film_list.category order by count(film_list.category) desc limit 3;
+
+
+5)select count(*) from film_list f join inventory i on f.fid = i.film_id join rental r on r.inventory_id =i.inventory_id join customer on customer.customer_id = r.customer_id and first_name = "susan" and last_name="WILSON" group by rating having rating="R";

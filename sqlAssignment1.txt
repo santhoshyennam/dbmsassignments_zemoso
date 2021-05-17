@@ -1,0 +1,17 @@
+
+
+assignment 1:
+
+1)mysql> select title,c.name from film f inner join film_category fc on f.film_id = fc.film_id inner join category c on c.category_id = fc.category_id where c.name='comedy';
+
+2)mysql> select f.title,c.name from film f,category c,film_category fc where f.film_id = fc.film_id and fc.category_id = c.category_id and c.name='horror' limit 3;	;
+
+3)select c.id,c.name,c.country,r.rental_id,fl.title,fl.category from customer_list c,rental r,inventory i,film_list fl where c.id=r.customer_id and r.inventory_id = i.inventory_id and i.film_id= fl.
+fid and c.country = 'india' and fl.category = 'horror';
+
+
+4)select c.id,c.name,c.country,r.rental_id,fl.title,fl.category from customer_list c,rental r,inventory i,film_list fl where c.id=r.customer_id and r.inventory_id = i.inventory_id and i.film_id= fl.fid and c.country = 'canada' and fl.actors  like '%NICK WAHLBERG%';
+
+5)mysql> select 'SEAN WILLIAMS' as actor,count(*) from film_list where actors like '%sean williams%';
+
+
